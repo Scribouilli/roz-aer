@@ -288,3 +288,16 @@ iframe {
 .project > a {
   align-self: flex-end;
 }
+
+section {
+  margin: 1em auto;
+}
+
+.logos_partis ul {
+  display: flex;
+  list-style: none;
+}
+
+.logos_partis li {
+  margin: 1em 2em;
+}
