@@ -1,12 +1,12 @@
 Gem::Specification.new do |spec|
-  spec.name        = "mimoza"
+  spec.name        = "roz-aer"
   spec.version     = "1.0.0"
   spec.authors     = ["Scribouilli"]
   spec.email       = "coucou@scribouilli.org"
 
-  spec.summary     = "Mimoza, a Jekyll theme"
+  spec.summary     = "Roz-aer, a Jekyll theme"
   spec.homepage    = "https://git.scribouilli.org/scribouilli/mimoza"
-  spec.description = "Mimoza is a Jekyll theme for Scribouilli."
+  spec.description = "Roz-aer is a Jekyll theme for Scribouilli."
   spec.license     = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
