@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
-  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
-  <title>
-    {% if site.title %} {{ page.title }} - {{ site.title }}
-      {% else %} {{ page.title }}
-    {% endif %}
-  </title>
-  <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | absolute_url }}" title="
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/styles.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/custom.css' | relative_url }}"
+    />
+    <title>
+      {% if site.title %} {{ page.title }} - {{ site.title }} {% else %} {{
+      page.title }} {% endif %}
+    </title>
+    <link
+      type="application/atom+xml"
+      rel="alternate"
+      href="{{ '/feed.xml' | absolute_url }}"
+      title="
     {%- if site.title -%}{{ site.title | escape -}}
       {%- else -%} Flux RSS du site
-    {%- endif -%}">
-</head>
+    {%- endif -%}"
+    />
+  </head>
 
-<body>
-
-  <main id="main" tabindex="-1">
-    <div class="container">
-      {{ content }}
-    </div>
-  </main>
-
-  {%- include footer.html -%}
-</body>
-
+  <body>
+    <main id="main" tabindex="-1">{{ content }}</main>
+  </body>
 </html>

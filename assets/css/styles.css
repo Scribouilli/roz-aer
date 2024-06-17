@@ -1,5 +1,12 @@
 :root {
-  --couleur-primaire: #e4032f;
+  --rouge: #E4032E;
+  /* --rouge: #ef1c28; */
+  /* --vert: #37ae6d; */
+  --vert: #3da868;
+  --jaune: #ffed00;
+  --violet: #951b81;
+  --rose: #e82d5b;
+  --couleur-primaire: var(--rouge);
 
   --underline-max-width: 100%;
   --underline-hover-width: 0;
@@ -16,43 +23,34 @@
 }
 
 @font-face {
-  font-family: "Luciole";
-  src: url("../fonts/Luciole-Regular.woff") format("woff"),
-    url("../fonts/Luciole-Regular.woff2") format("woff2");
+  font-family: "Barlow";
+  src: url("../fonts/Barlow-Regular.woff") format("woff"),
+    url("../fonts/Barlow-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
 
 @font-face {
-  font-family: "Luciole";
-  src: url("../fonts/Luciole-Bold.woff") format("woff"),
-    url("../fonts/Luciole-Bold.woff2") format("woff2");
+  font-family: "Barlow";
+  src: url("../fonts/Barlow-SemiBold.woff") format("woff"),
+    url("../fonts/Barlow-SemiBold.woff2") format("woff2");
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   text-rendering: optimizeLegibility;
 }
 
 @font-face {
-  font-family: "Luciole";
-  src: url("../fonts/Luciole-Italic.woff") format("woff"),
-    url("../fonts/Luciole-Italic.woff2") format("woff2");
-  font-style: italic;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-
-@font-face {
-  font-family: "Luciole";
-  src: url("../fonts/Luciole-BoldItalic.woff") format("woff"),
-    url("../fonts/Luciole-BoldItalic.woff2") format("woff2");
-  font-style: italic;
+  font-family: "Barlow";
+  src: url("../fonts/Barlow-Bold.woff") format("woff"),
+    url("../fonts/Barlow-Bold.woff2") format("woff2");
+  font-style: normal;
   font-weight: 700;
   text-rendering: optimizeLegibility;
 }
 
 html {
-  font-family: "Luciole", Arial, Helvetica, sans-serif;
+  font-family: "Barlow", Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -71,53 +69,6 @@ body {
 
 .skip-links:focus {
   transform: translateY(0%);
-}
-
-header {
-  background-color: var(--couleur-primaire);
-}
-
-header .container {
-  display: flex;
-  justify-content: flex-end;
-}
-
-header a {
-  color: white;
-}
-
-header ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-header li + li {
-  margin-top: 0;
-}
-
-footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-top: 4px solid var(--couleur-primaire);
-}
-
-main {
-  max-width: 70ch;
-  min-height: 80vh;
-  margin: 0 auto;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.container {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding-right: 1rem;
-  padding-left: 1rem;
 }
 
 h1,
@@ -154,7 +105,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 3rem;
 }
 
 h3 {
@@ -173,30 +124,14 @@ h6 {
   font-size: 1.125rem;
 }
 
-a {
-  color: var(--couleur-primaire);
-  text-decoration: none;
-}
-
-a[href]:active,
-a[href]:hover {
-  --underline-hover-width: var(--underline-max-width);
-}
-
-[href] {
-  background-image: var(--underline-img), var(--underline-img);
-  background-position: var(--underline-x) 100%,
-    var(--underline-x) calc(100% - 0.0625em);
-  background-repeat: no-repeat, no-repeat;
-  background-size: var(--underline-hover-width) 0.125em,
-    var(--underline-idle-width) 0.0625em;
-  transition: background-size 0s;
-}
-
 li + li,
 li > ul,
 li > ol {
   margin-top: 0.5rem;
+}
+
+a {
+  color: inherit;
 }
 
 blockquote {
@@ -237,68 +172,181 @@ iframe {
   max-width: 100%;
 }
 
-.blog-item {
+header {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
 }
 
-.blog-item > a {
-  align-self: flex-end;
+header > div:first-child {
+  flex-basis: 30%;
 }
 
-.blog-item h2 {
-  margin-bottom: 1rem;
-  font-weight: normal;
+header h1 {
+  margin-bottom: 0;
 }
 
-.blog-item h2 a {
-  background: none;
-}
-
-.projects {
+header ul {
   display: flex;
-  gap: 4rem 2.5rem;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.project {
-  flex-basis: calc(50% - 1.25rem);
-  display: flex;
-  flex-direction: column;
+.footer {
+  margin-bottom: 0;
+  padding-block: 1rem;
+  color: white;
+  background-color: var(--couleur-primaire);
 }
 
-.project img {
-  max-height: 25rem;
+.container {
+  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
-.project h2 {
-  margin: 1rem 0;
-  font-weight: normal;
-  font-size: 2rem;
+.btn {
+  display: inline-block;
+  padding: 1rem;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: var(--vert);
 }
 
-.project h2 a {
-  background: none;
+.btn:hover {
+  box-shadow: 0px 5px 9px -2px rgba(0,0,0,0.75);
 }
 
-.project > a {
-  align-self: flex-end;
+.btn[href*="http"]::after {
+  content:' ➚'
 }
 
 section {
-  margin: 6em auto;
+  margin-bottom: 3rem;
+  padding-inline: 1rem;
+}
+
+section > div {
+  max-width: 70ch;
+  margin-inline: auto;
+  padding-block: 3rem;
+}
+
+.entete img {
+  max-height: 50vh;
+  margin-inline: auto;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#programme {
+  background-color: var(--vert);
+}
+
+#programme .btn {
+  margin-top: 2rem;
+  background-color: white;
+}
+
+#candidature img {
+  max-height: 50vh;
+  margin-inline: auto;
+}
+
+.contact {
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  background-color: var(--jaune);
+}
+
+.contact a {
+  color: black;
+}
+
+.logos_partis {
+  margin-bottom: 0;
+  color: white;
+  background: var(--rouge);
+}
+
+.logos_partis > div {
+  max-width: 100ch;
+}
+
+.logos_partis h2 {
+  margin-bottom: 4rem;
 }
 
 .logos_partis ul {
   display: flex;
-  list-style: none;
-  background: var(--couleur-primaire);
+  gap: 2rem;
+  list-style: "";
+  margin-bottom: 2rem;
+  padding-left: 0;
 }
 
-.logos_partis li {
-  margin: 1em 2em;
+#procuration {
+  margin-bottom: 0;
+  text-align: center;
+  color: white;
+  background-color: var(--violet);
+}
+
+#procuration p:first-of-type {
+  font-size: 2rem;
+}
+
+#procuration h2 {
+  margin-bottom: 3rem;
+}
+
+#procuration a {
+  color: var(--violet);
+  background-color: white;
+}
+
+#inscription {
+  color: white;
+  background-color: var(--rose);
+}
+
+.villes {
+  margin-bottom: 0;
+  text-align: center;
+  color: var(--rouge)
+}
+
+.villes img {
+  max-width: 20rem;
+  margin-inline: auto;
+}
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    padding-inline: 1rem;
+  }
+
+  header img {
+    max-width: 50vw;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  header img {
+    max-width: 100%;
+  }
 }
