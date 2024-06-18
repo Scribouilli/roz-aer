@@ -265,13 +265,13 @@ section > div {
   margin-inline: auto;
 }
 
-.contact {
+.contact, #contact {
   margin-bottom: 0;
   font-size: 1.5rem;
   background-color: var(--jaune);
 }
 
-.contact a {
+.contact a, #contact a {
   color: black;
 }
 
